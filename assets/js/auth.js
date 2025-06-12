@@ -1,11 +1,11 @@
 // Authentication JavaScript for Kentronics TechStar Solutions
 
 // API Base URL - Update this to match your WordPress site URL
-const API_BASE_URL = window.location.origin + '/wp-json/pooltable/v1';
+const API_BASE_URL = window.location.protocol + '//' + window.location.hostname + '/wp-json/pooltable/v1';
 
 // Authentication state
 let authToken = null;
-let currentUser = null;
+let authCurrentUser = null;
 
 // Initialize authentication on page load
 document.addEventListener('DOMContentLoaded', function() {
@@ -20,7 +20,7 @@ function initializeAuth() {
     
     if (userData) {
         try {
-            currentUser = JSON.parse(userData);
+            authCurrentUser = JSON.parse(userData);
         } catch (error) {
             console.error('Error parsing user data:', error);
             clearAuthData();
@@ -81,10 +81,10 @@ async function handleLogin(event) {
         if (data.success && data.token && data.user) {
             // Store authentication data
             authToken = data.token;
-            currentUser = data.user;
+            authCurrentUser = data.user;
             
             localStorage.setItem('pooltable_auth_token', authToken);
-            localStorage.setItem('pooltable_user_data', JSON.stringify(currentUser));
+            localStorage.setItem('pooltable_user_data', JSON.stringify(authCurrentUser));
             
             // Show success message
             showAlert('loginAlert', 'success', 'Login successful! Redirecting to dashboard...', false);
@@ -111,12 +111,12 @@ async function handleLogin(event) {
 
 // Check if user is authenticated
 function isAuthenticated() {
-    return authToken && currentUser;
+    return authToken && authCurrentUser;
 }
 
 // Get current user data
 function getCurrentUser() {
-    return currentUser;
+    return authCurrentUser;
 }
 
 // Get auth token
@@ -127,7 +127,7 @@ function getAuthToken() {
 // Clear authentication data
 function clearAuthData() {
     authToken = null;
-    currentUser = null;
+    authCurrentUser = null;
     localStorage.removeItem('pooltable_auth_token');
     localStorage.removeItem('pooltable_user_data');
 }
