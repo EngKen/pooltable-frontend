@@ -1,8 +1,7 @@
 // Authentication JavaScript for Kentronics TechStar Solutions
 
-// API Base URL - Configure this to match your WordPress site
-// Replace 'your-wordpress-site.com' with your actual domain
-const API_BASE_URL = 'https://your-wordpress-site.com/wp-json/pooltable/v1';
+// API Base URL - Kentronics Solutions WordPress site
+const API_BASE_URL = 'https://www.kentronicssolutions.com/wp-json/pooltable/v1';
 
 // Authentication state
 let authToken = null;
@@ -133,19 +132,34 @@ function clearAuthData() {
     localStorage.removeItem('pooltable_user_data');
 }
 
-// Logout function
-function logout() {
+// Enhanced logout function with confirmation
+function logout(showConfirmation = true) {
+    if (showConfirmation) {
+        if (!confirm('Are you sure you want to logout?')) {
+            return;
+        }
+    }
+    
+    // Show logout process
+    const logoutButtons = document.querySelectorAll('[onclick*="logout"]');
+    logoutButtons.forEach(btn => {
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Logging out...';
+        btn.disabled = true;
+    });
+    
+    // Clear authentication data
     clearAuthData();
     
     // Show logout message
     if (typeof showAlert === 'function') {
-        showAlert('mainAlert', 'info', 'You have been logged out successfully.');
+        showAlert('mainAlert', 'success', 'You have been logged out successfully.');
     }
     
     // Redirect to login page
     setTimeout(() => {
         window.location.href = 'login.html';
-    }, 1000);
+    }, 1500);
 }
 
 // Make authenticated API request

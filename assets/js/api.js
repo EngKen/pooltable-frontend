@@ -2,7 +2,7 @@
 
 // API Configuration
 const API_CONFIG = {
-    baseUrl: 'https://your-wordpress-site.com/wp-json/pooltable/v1',
+    baseUrl: 'https://www.kentronicssolutions.com/wp-json/pooltable/v1',
     timeout: 30000, // 30 seconds
     retryAttempts: 3,
     retryDelay: 1000 // 1 second

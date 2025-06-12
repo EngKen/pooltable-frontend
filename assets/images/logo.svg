@@ -1,5 +1,5 @@
 <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background with subtle gradient -->
+  <!-- Background with pink/purple gradient matching original logo -->
   <defs>
     <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
       <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:1" />
@@ -12,50 +12,49 @@
     </linearGradient>
   </defs>
   
-  <!-- Main background circle -->
-  <circle cx="60" cy="60" r="55" fill="url(#bgGradient)" stroke="#A0A0A0" stroke-width="2"/>
+  <!-- Main background with pink/purple gradient -->
+  <rect x="10" y="10" width="100" height="100" rx="15" fill="url(#bgGradient)" stroke="#C0C0C0" stroke-width="1"/>
   
-  <!-- Central logo area -->
-  <g transform="translate(60,60)">
-    <!-- Large "K" letter styled like the original logo -->
-    <g transform="translate(-25,-25)">
-      <!-- K left vertical -->
-      <rect x="5" y="5" width="6" height="40" fill="#4169E1" rx="2"/>
+  <!-- Central logo area matching the provided logo -->
+  <g transform="translate(60,50)">
+    <!-- Large "K" letter in blue -->
+    <g transform="translate(-30,-20)">
+      <!-- K left vertical line -->
+      <rect x="5" y="5" width="8" height="35" fill="#0080FF" rx="2"/>
       
-      <!-- K diagonal strokes -->
-      <path d="M11 15 L25 5 L30 8 L18 20 L30 35 L25 40 L11 25 Z" fill="#4169E1"/>
+      <!-- K upper diagonal -->
+      <path d="M13 12 L30 5 L35 8 L20 18 Z" fill="#0080FF"/>
       
-      <!-- "entronics" text curve -->
-      <path id="textCurve" d="M 15 45 Q 35 48 50 45" stroke="none" fill="none"/>
-      <text font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#4169E1">
-        <textPath href="#textCurve" startOffset="0%">entronics</textPath>
-      </text>
+      <!-- K lower diagonal -->
+      <path d="M13 25 L35 32 L30 37 L20 25 Z" fill="#0080FF"/>
+      
+      <!-- "entronics" text -->
+      <text x="40" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0080FF">entronics</text>
     </g>
     
-    <!-- Decorative tech squares around the logo -->
-    <g opacity="0.7">
-      <!-- Blue squares representing technology/solutions -->
-      <rect x="-35" y="-15" width="8" height="8" fill="#00BFFF" rx="1"/>
-      <rect x="-35" y="-5" width="8" height="8" fill="#00BFFF" rx="1"/>
-      <rect x="-35" y="5" width="8" height="8" fill="#00BFFF" rx="1"/>
-      <rect x="27" y="5" width="8" height="8" fill="#00BFFF" rx="1"/>
+    <!-- Blue tech squares positioned like in original -->
+    <g>
+      <!-- Left column of squares -->
+      <rect x="-40" y="-10" width="12" height="12" fill="#00BFFF" rx="2"/>
+      <rect x="-40" y="5" width="12" height="12" fill="#00BFFF" rx="2"/>
+      <rect x="-40" y="20" width="12" height="12" fill="#00BFFF" rx="2"/>
+      
+      <!-- Right side square -->
+      <rect x="30" y="20" width="12" height="12" fill="#00BFFF" rx="2"/>
     </g>
     
     <!-- Central oval/ring element -->
-    <ellipse cx="0" cy="0" rx="18" ry="12" fill="none" stroke="url(#metalGradient)" stroke-width="3" opacity="0.8"/>
+    <ellipse cx="0" cy="5" rx="25" ry="15" fill="none" stroke="url(#metalGradient)" stroke-width="4" opacity="0.7"/>
     
     <!-- "SOLUTIONS" text at bottom -->
-    <text x="0" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#2F4F4F" letter-spacing="1px">SOLUTIONS</text>
+    <text x="0" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#4A4A4A" letter-spacing="1px">SOLUTIONS</text>
   </g>
   
-  <!-- Corner accent elements -->
-  <g opacity="0.4" fill="#4169E1">
-    <circle cx="20" cy="20" r="3"/>
-    <circle cx="100" cy="20" r="3"/>
-    <circle cx="20" cy="100" r="3"/>
-    <circle cx="100" cy="100" r="3"/>
+  <!-- Corner decorative elements -->
+  <g opacity="0.3">
+    <circle cx="20" cy="20" r="2" fill="#0080FF"/>
+    <circle cx="100" cy="20" r="2" fill="#0080FF"/>
+    <circle cx="20" cy="100" r="2" fill="#0080FF"/>
+    <circle cx="100" cy="100" r="2" fill="#0080FF"/>
   </g>
-  
-  <!-- Outer decorative ring -->
-  <circle cx="60" cy="60" r="58" fill="none" stroke="#A0A0A0" stroke-width="1" opacity="0.5"/>
 </svg>

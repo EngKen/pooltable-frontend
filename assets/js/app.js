@@ -192,7 +192,47 @@ function updateDevicesTable(devices) {
 }
 
 function refreshDevices() {
+    const btn = document.getElementById('refreshDevicesBtn');
+    if (btn) {
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>Refreshing...';
+        btn.disabled = true;
+        
+        setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.disabled = false;
+        }, 2000);
+    }
+    
+    showLoading('devicesLoader', true);
+    showLoading('devicesContainer', false);
     loadDashboardData();
+}
+
+// Enhanced refresh function with visual feedback
+function refreshPage() {
+    const currentPage = window.location.pathname;
+    
+    if (currentPage.includes('dashboard')) {
+        refreshDevices();
+    } else if (currentPage.includes('transactions')) {
+        refreshTransactions();
+    } else if (currentPage.includes('withdraw')) {
+        loadWithdrawPageData();
+    }
+    
+    // Show refresh indicator
+    const refreshButtons = document.querySelectorAll('[onclick*="refresh"]');
+    refreshButtons.forEach(btn => {
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>Refreshing...';
+        btn.disabled = true;
+        
+        setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.disabled = false;
+        }, 2000);
+    });
 }
 
 // Transaction functions
