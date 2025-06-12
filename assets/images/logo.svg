@@ -1,65 +1,61 @@
 <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle -->
-  <circle cx="60" cy="60" r="55" fill="#1e3a5f" stroke="#2d4a6b" stroke-width="2"/>
+  <!-- Background with subtle gradient -->
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DDA0DD;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8E8E8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C0C0C0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A0A0A0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
   
-  <!-- Main K letter design -->
-  <g transform="translate(20,25)">
-    <!-- K letter left vertical line -->
-    <rect x="10" y="10" width="8" height="60" fill="#ffffff"/>
+  <!-- Main background circle -->
+  <circle cx="60" cy="60" r="55" fill="url(#bgGradient)" stroke="#A0A0A0" stroke-width="2"/>
+  
+  <!-- Central logo area -->
+  <g transform="translate(60,60)">
+    <!-- Large "K" letter styled like the original logo -->
+    <g transform="translate(-25,-25)">
+      <!-- K left vertical -->
+      <rect x="5" y="5" width="6" height="40" fill="#4169E1" rx="2"/>
+      
+      <!-- K diagonal strokes -->
+      <path d="M11 15 L25 5 L30 8 L18 20 L30 35 L25 40 L11 25 Z" fill="#4169E1"/>
+      
+      <!-- "entronics" text curve -->
+      <path id="textCurve" d="M 15 45 Q 35 48 50 45" stroke="none" fill="none"/>
+      <text font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#4169E1">
+        <textPath href="#textCurve" startOffset="0%">entronics</textPath>
+      </text>
+    </g>
     
-    <!-- K letter diagonal lines -->
-    <path d="M18 25 L40 10 L48 15 L30 27 L48 55 L40 60 L18 40 Z" fill="#ffffff"/>
+    <!-- Decorative tech squares around the logo -->
+    <g opacity="0.7">
+      <!-- Blue squares representing technology/solutions -->
+      <rect x="-35" y="-15" width="8" height="8" fill="#00BFFF" rx="1"/>
+      <rect x="-35" y="-5" width="8" height="8" fill="#00BFFF" rx="1"/>
+      <rect x="-35" y="5" width="8" height="8" fill="#00BFFF" rx="1"/>
+      <rect x="27" y="5" width="8" height="8" fill="#00BFFF" rx="1"/>
+    </g>
     
-    <!-- Stylized pool table elements -->
-    <!-- Table surface -->
-    <rect x="45" y="15" width="25" height="15" rx="2" fill="#00a86b" stroke="#ffffff" stroke-width="1"/>
+    <!-- Central oval/ring element -->
+    <ellipse cx="0" cy="0" rx="18" ry="12" fill="none" stroke="url(#metalGradient)" stroke-width="3" opacity="0.8"/>
     
-    <!-- Pool balls representation -->
-    <circle cx="50" cy="20" r="2" fill="#ffff00"/>
-    <circle cx="58" cy="22" r="2" fill="#ff0000"/>
-    <circle cx="65" cy="25" r="2" fill="#0000ff"/>
-    
-    <!-- Cue stick -->
-    <line x1="45" y1="35" x2="70" y2="40" stroke="#8b4513" stroke-width="2" stroke-linecap="round"/>
+    <!-- "SOLUTIONS" text at bottom -->
+    <text x="0" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#2F4F4F" letter-spacing="1px">SOLUTIONS</text>
   </g>
   
-  <!-- Company initial circles -->
-  <g transform="translate(25,85)">
-    <!-- K circle -->
-    <circle cx="0" cy="0" r="8" fill="#00a86b"/>
-    <text x="0" y="3" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">K</text>
-    
-    <!-- T circle -->
-    <circle cx="18" cy="0" r="8" fill="#ffc107"/>
-    <text x="18" y="3" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#000000">T</text>
-    
-    <!-- S circle -->
-    <circle cx="36" cy="0" r="8" fill="#dc3545"/>
-    <text x="36" y="3" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">S</text>
+  <!-- Corner accent elements -->
+  <g opacity="0.4" fill="#4169E1">
+    <circle cx="20" cy="20" r="3"/>
+    <circle cx="100" cy="20" r="3"/>
+    <circle cx="20" cy="100" r="3"/>
+    <circle cx="100" cy="100" r="3"/>
   </g>
   
-  <!-- Decorative elements -->
-  <g opacity="0.3">
-    <!-- Corner decorations -->
-    <path d="M15 15 Q20 10 25 15 Q20 20 15 15" fill="#ffffff"/>
-    <path d="M95 15 Q100 10 105 15 Q100 20 95 15" fill="#ffffff"/>
-    <path d="M15 105 Q20 100 25 105 Q20 110 15 105" fill="#ffffff"/>
-    <path d="M95 105 Q100 100 105 105 Q100 110 95 105" fill="#ffffff"/>
-  </g>
-  
-  <!-- Outer ring with small dots -->
-  <g opacity="0.5">
-    <circle cx="60" cy="15" r="2" fill="#ffffff"/>
-    <circle cx="105" cy="60" r="2" fill="#ffffff"/>
-    <circle cx="60" cy="105" r="2" fill="#ffffff"/>
-    <circle cx="15" cy="60" r="2" fill="#ffffff"/>
-  </g>
-  
-  <!-- Tech elements - circuit-like patterns -->
-  <g opacity="0.2" stroke="#ffffff" stroke-width="1" fill="none">
-    <path d="M30 30 L35 30 L35 35 L40 35"/>
-    <path d="M80 30 L85 30 L85 35 L90 35"/>
-    <path d="M30 90 L35 90 L35 85 L40 85"/>
-    <path d="M80 90 L85 90 L85 85 L90 85"/>
-  </g>
+  <!-- Outer decorative ring -->
+  <circle cx="60" cy="60" r="58" fill="none" stroke="#A0A0A0" stroke-width="1" opacity="0.5"/>
 </svg>

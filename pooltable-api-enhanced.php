@@ -49,15 +49,15 @@ class Enhanced_PoolTable_Management_API {
         
         $charset_collate = $wpdb->get_charset_collate();
         
-        // Enhanced device transactions table
+        // Enhanced device transactions table with KSH amounts
         $transactions_table = $wpdb->prefix . 'device_transactions';
         $transactions_sql = "CREATE TABLE IF NOT EXISTS $transactions_table (
             id bigint(20) NOT NULL AUTO_INCREMENT,
             account_no varchar(50) NOT NULL,
             device_id varchar(20) NOT NULL,
             transaction_id varchar(50) NOT NULL UNIQUE,
-            amount decimal(10,2) NOT NULL,
-            running_balance decimal(10,2) NOT NULL,
+            amount decimal(12,2) NOT NULL COMMENT 'Amount in KSH',
+            running_balance decimal(12,2) NOT NULL COMMENT 'Running balance in KSH',
             payer_name varchar(100) DEFAULT NULL,
             phone_number varchar(20) DEFAULT NULL,
             game_status enum('played', 'not_played') DEFAULT 'not_played',
@@ -68,7 +68,8 @@ class Enhanced_PoolTable_Management_API {
             KEY device_id (device_id),
             KEY transaction_id (transaction_id),
             KEY transaction_date (transaction_date),
-            KEY game_status (game_status)
+            KEY game_status (game_status),
+            KEY phone_number (phone_number)
         ) $charset_collate;";
 
         // Withdrawal history table

@@ -1,7 +1,8 @@
 // Authentication JavaScript for Kentronics TechStar Solutions
 
-// API Base URL - Update this to match your WordPress site URL
-const API_BASE_URL = window.location.protocol + '//' + window.location.hostname + '/wp-json/pooltable/v1';
+// API Base URL - Configure this to match your WordPress site
+// Replace 'your-wordpress-site.com' with your actual domain
+const API_BASE_URL = 'https://your-wordpress-site.com/wp-json/pooltable/v1';
 
 // Authentication state
 let authToken = null;
