@@ -2,11 +2,11 @@
 // Production configuration
 
 const CONFIG = {
-    // Your WordPress site URL (replace with your actual domain)
-    WORDPRESS_URL: 'https://your-actual-wordpress-domain.com', // TODO: Replace with your actual WordPress domain
+    // WordPress site URL
+    WORDPRESS_URL: 'https://www.kentronicssolutions.com',
     
     // API endpoints
-    API_BASE_URL: 'https://your-actual-wordpress-domain.com/wp-json/pooltable/v1', // TODO: Replace with your actual WordPress domain
+    API_BASE_URL: 'https://www.kentronicssolutions.com/wp-json/pooltable/v1',
     
     // Application settings
     CURRENCY: 'KSH',
